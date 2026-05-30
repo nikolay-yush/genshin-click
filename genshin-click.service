@@ -1,0 +1,10 @@
+[Unit]
+Description=Genshin Hoyolab Auto Click
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/nik/WORKSPACE/GENSHIN_CLICK
+ExecStart=/home/nik/WORKSPACE/GENSHIN_CLICK/venv/bin/python main.py
+
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/nik/.Xauthority

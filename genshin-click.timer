@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Genshin Click Every Day
+
+[Timer]
+OnCalendar=*-*-* 18:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
