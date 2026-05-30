@@ -1,44 +1,53 @@
 # Genshin Hoyolab Auto Claim
 
-Simple Playwright automation for daily Hoyolab reward claim.
+Simple Playwright automation script for claiming daily Hoyolab rewards.
 
 ## Installation
-install Python 3.12
-install uv manager
 
-create .env file with:
+Install Python 3.12 and the uv package manager on your OS.
 
-    GENSHIN_DAILY_TASK_URL=https://example.com
-    ICON_CHECK_SELECTOR=div.actived-day
+Run the following command to install all required packages:
 
-# First Run
+```bash
+uv sync
+```
 
-Run script manually:
+Create a `.env` file and replace `YOUR_ID` with your own ID:
+
+```env
+GENSHIN_DAILY_TASK_URL="https://act.hoyolab.com/ys/event/signin-sea-v3/index.html?act_id=YOUR_ID&lang=ru-ru"
+ICON_CHECK_SELECTOR="//div[contains(@class, 'actived-day')]/parent::*"
+CHROME_EXECUTABLE_PATH="/usr/bin/google-chrome"
+```
+
+## First Run
+
+Run the script manually:
 
 ```bash
 python main.py
 ```
 
-Login to your account in opened Chrome window.
+Log in to your account in the opened Chrome window.
 
 ---
 
-# Scheduler
+## Scheduler
 
-Make scripts executable:
+Make the scripts executable:
 
 ```bash
 chmod +x start.sh
 chmod +x stop.sh
 ```
 
-Start scheduler:
+Start the scheduler:
 
 ```bash
 ./start.sh
 ```
 
-Stop scheduler:
+Stop the scheduler:
 
 ```bash
 ./stop.sh
@@ -46,7 +55,7 @@ Stop scheduler:
 
 ---
 
-# Useful Commands
+## Useful Commands
 
 Check timer status:
 
@@ -60,7 +69,7 @@ View logs:
 journalctl --user -u genshin-click.service -f
 ```
 
-Manual service run:
+Run the service manually:
 
 ```bash
 systemctl --user start genshin-click.service
