@@ -73,4 +73,6 @@ Run the service manually:
 
 ```bash
 systemctl --user start genshin-click.service
+
+
 ```
